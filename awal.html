@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahma Dwi Aryuni</title>
+    <style>
+
+        body {
+            overflow: hidden;
+            height:absolute;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            background: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background: #343434;
+            color: white;
+        }
+
+        .modal button:hover {
+            background: #555;
+        }
+
+        .text-container {
+            text-align: center;
+            margin-top: 20px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: ivory;
+        }
+
+        .fade-text {
+            font-size: 24px;
+            font-family: cursive;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            width: 500px;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            width: 300px;
+            height: 150px;
+        }
+
+        .popup button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #noButton {
+            position: absolute;
+            transition: all 0.2s ease;
+        }
+
+        body.modal.active .container {
+            filter: blur(5px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body style="background-color: #343434;">
+
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <h2 style="font-family: cursive;">Mau pakee laguu ndaa??</h2>
+            <button onclick="playMusic()">Bolee</button>
+            <button onclick="closeModal()">Ndaa</button>
+        </div>
+    </div>
+    
+    <div class="text-container">
+        <div id="text1" class="fade-text visible"></div>
+        <div id="text2" class="fade-text"><h3>Rahma Dwi Aryuni (Poo).</h3></div>
+        <div id="text3" class="fade-text">22-1-2009 <br><br> tanggal itu menjadi saksi seorang manusia yang indah nan hebat dilahirkan ke muka bumi. Terimakasih tuhan telah memberiku kesempatan untuk berkenalan dengannya. Terimakasih, terimakasih dan terimakasih</div>
+        <div id="text4" class="fade-text">Selamat ulang tahun untuk kamu, manusia yang sulit sekali diartikan.</div>
+        <div id="text5" class="fade-text">Terimakasih telah lahir di dunia, terimakasih telah memberi warna yang indah dalam hidupku dan terimakasih telah menjadi tokoh utama dalam cerita khayalanku. Bahagia selaluu 'Poo'</div>
+        <div id="text6" class="fade-text">Happy level up kamuu, semogaa kamuu semakinnn pintarrr, baiqqq, sholehahhh, juga ceriaa yaa. Semoga yang telah kamu semogakan tersemogakann, harapann kamuu ditahunn tahunn ini terwujudd, dan semogaa jadi milikku eakkk.</div>
+        <div id="text7" class="fade-text">Loverrrrrrrr.</div>
+    </div>
+
+    <div id="popup" class="popup">
+        <p>Mauu lanjutt takk Poo?</p>
+        <button id="yesButton">iyaa</button>
+        <button id="noButton">Ndaa</button>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="SJD.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const texts = [
+            document.getElementById('text1'),
+            document.getElementById('text2'),
+            document.getElementById('text3'),
+            document.getElementById('text4'),
+            document.getElementById('text5'),
+            document.getElementById('text6'),
+            document.getElementById('text7')
+        ];
+        let currentIndex = 0;
+
+        function showNextText() {
+            texts[currentIndex].classList.remove('visible');
+            currentIndex = (currentIndex + 1) % texts.length;
+
+            if (currentIndex === texts.length - 1) {
+                showPopup();
+            }
+
+            texts[currentIndex].classList.add('visible');
+        }
+
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block';
+        }
+
+        function hidePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+
+        function moveNoButton() {
+            const noButton = document.getElementById('noButton');
+            const popup = document.getElementById('popup');
+
+            const maxX = popup.offsetWidth - noButton.offsetWidth;
+            const maxY = popup.offsetHeight - noButton.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+
+        document.getElementById('yesButton').addEventListener('click', (event) => {
+            event.stopPropagation();
+            hidePopup();
+            window.location.href = "rumah.html";
+        });
+
+        document.getElementById('noButton').addEventListener('mouseover', moveNoButton);
+
+        document.getElementById('noButton').addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        document.body.addEventListener('click', (event) => {
+            const popup = document.getElementById('popup');
+            if (popup.style.display !== 'block') {
+                showNextText();
+            }
+        });
+
+        function playMusic () {
+            const music = document.getElementById('background-music');
+            music.play();
+            closeModal();
+        }
+
+        function closeModal(){
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+            document.body.classList.remove('modal-active');
+        }
+
+        window.onload = function(){
+            documen.body.classList.add('modal-active');
+        }
+
+
+    </script>
+
+
+</body>
+<footer>
+    <center style="color: white; font-family: cursive;">Hargai setiap apapun itu, karena... belum tentu kamu menemukannya lagi</center>
+</footer>
+</html>

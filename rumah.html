@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All about you, Poo</title>
+    
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 250px;
+            height: absolute;
+            background: #343434;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            padding-right: 20px;
+        }
+
+        .card, .cardright {
+            font-family: cursive;
+            width: 50%;
+            background: #343434;
+            color : #222;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin:5px
+            
+        }
+
+        .title {
+            
+            color: white;
+            text-align: center;
+        }
+        
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: white;
+            text-align: center;
+        }
+
+        .card.active .content, .cardright.active .content  {
+            max-height: 10000px;
+        }
+
+      
+         
+    </style>
+</head>
+
+<body style="background-color: #343434;">
+
+  
+
+    <div class="container">
+        <div class="card" onclick="toggleContent(this)">
+            <h3 class="title"><center>Tentang Kamu</center><br>=====================</h3>
+            <div class="content">
+            <p style="color: white;">Hai kamuu, iyaa kamu. seorang manusia dengan mata yang indah, treatment yang hangat dan suasana yang sungguh meneduhkan. Seorang manusia dengan sifat periang namun sayangnnya terlalu banyak beban yang kamu pikul sendiri sehingga membuatmu sangat sangat tertutup, susah untuk bercerita, lebih banyak memendam masalah sendiri, dan susah untuk berbicara tentang hal yang mungkin aga sensitif. Aku hanyalah orang baru yang berusaha untuk membuatmu bisa lebih bahagia dalam menjalani hidup. Maaf jika kehadiran ku justru mengganggu hidup kamu, tapi sungguh maksudku bukan itu. Aku memang belum terlalu banyak tau soal dirimu tapi... aku tau kok bagaimana rasanya sering dicampakan, aku tau kok rasanya bagaimana tidak ada tempat untuk berpulang dan untuk bercerita tentang apapun itu, aku tau kok pura pura bahagia padahal lagi banyak masalah itu gimana. Terkadang jujur tentang apa yang sedang kita rasakan itu gapapa loh, itu ga ngebuat kamu jadi lemah kok, justru itu ngebuat orang lain mengerti tentang apa yang sedang kamu rasakan. Jadi people plester emang ga enak sih, kamu selalu mendenngarkan berbagai cerita, masalah, dan bahkan informasi pribadi dari orang lain, namun ketika kamu ingin bercerita kamu bingung menemukan tempat cerita untuk kamu, karena kamu merasa kurang aman dan nyaman untuk menceritakannya dan kamu memilih untuk menyimpannya saja dalam diri kamu tanpa menceritakannya kepada orang lain, padahall itu bisa berdampak besar banget kepada diri kamu lohh, ketika kamu bercerita setidaknya kamu melepaskan sesuatu yang mengganjal dalam diri kamu dan itu bisa membuatmu sedikit tenang dibanding ketika sebelum bercerita, namun sebaliknya ketka kamu memilih untuk memendamnya sendiri kamu akan mengalami sebuah situasi dimana kamu akan merakasan gelisah dan risau, atau bahasa sekarang sih panick attack ya. Aku disini hanya ingin membantumu sembuh, meskipun kamu sering bilang hal hal yang sedikit keras kepala, tapi aku membuktikan bahwa kamu juga bisa sembuh, kamu juga bisa berdamai dan menghargai diri sendiri, kamu juga berhak bahagia dan kamu juga bisa memiliki sebuah tujuan yang pasti, aku bakal membuktikan itu bahkan ketika kamu tidak percaya dan menganggap hal itu mustahil untuk terjadi. Izinkan aku untuk menjadikan mu rumah baruku, izinkan aku untuk berbagi cerita denganmu, dan izinkan aku untuk mencoba mengobati luka trauma yang sudah mengerak dihidup kamu, aku akan berusaha untuk selalu membuatmu tidak merasa sendiri, dan aku akan berusaha untuk membuatmu menghargai kehadiranku. Harapanku aku juga bisa menjadi rumah yang hangat bagimu, rumahmu untuk berpulang, rumahmu untuk berkeluh kesah, rumahmu untuk bercerita, dan rumahmu yang kau simpan sebagian hidupmu didalam rumah itu, semoga...</p>
+        </div>
+    </div>
+    </div>
+    <div class="container"> 
+        <div class="cardright" onclick="toggleContent(this)">
+            <h3 class="title" style="color: darkgrey;"><center>Tentang Ikhlas?</center><br>=====================</h3> 
+            <div class="content">
+                <div style="color: darkgrey;"> <p>Dan yapp, lagi dan lagi. Ikhlas, 6 huruf yang lumayan aku benci karena sudah banyak hal yang buruk menimpa ku, dan aku harus tetap mengucapkannya kala itu. Sampai kapan? aga bangs*t sih emang, tapii yaudah lah yaa mau gimanaa lagi.  <div style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">"Ragamu memang sudah tidak bersamaku lagi, namun 'kamu' akan abadi didalam diksiku" <br> -Labrador </div> <br> begitulah kira kira sepotong kutipan dari puisi yang pernah ku buat. Setiap pertemuan pasti ada perpisahan kan? hahaha dunia ternyata kejam juga ya, begitupun dengan kita, kita saling kenal lewat interaksi singkat yang tidak direncanakan. Semoga saja ketika mungkin saja aku tidak bersamamu lagi, kamu tetap bahagia yaa, jangan lupa untuk tersenyum dan tetaplah menjadi Rahma yang Ibnu kenal yaaaa. aku gabisa terlalu banyak bicara dalam hal ini, mungkin karena aku sangat lemah dengan yang urusannya perpisahan, yang terpenting inget selalu pesan akuu yaa, jaga kesehatannyaa, mam yang teratur, tetepp bahagiaa, jangan lupa untuk bercerita tentang hari ini, jangan benci orang yang nyakitin kamu, kamu doain aja biar tuhan yang bales semua itu. , DANN YANG PALINGG PENTINGGGG sayangi dan hargai diri kamu sendiri, karena mau sebanyak apapun temanmu yang paling tau dan paling dekat denganmu ialah diri kamu sendiri hehe >< <br><br> <div style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">"Ketika aku bukan lagi rumah yang kau tuju, aku akan tetap membukakan pntu untuk jalanmu pulang. Sebab cinta bukan soal menggenggam, tapi merelakan dengan hati yang lapang"<br>-Labrador <br><br></div>ingett yaa, akuu bikinn inii bukann untukk meninggalkan kamu, tapi lebih ke jaga jaga aja soalnya kamu sendiri yang bilang, tentang kamu yang masih plin plan dengan pilihanmu sendiri, tapi gapapa itu hakmu untuk memilih dan aku tidak mempunyai hak apapun untuk memaksamu memilihku. Yang jelas "i love u more than u know and more than myself"</p> </div> 
+            </div>
+        </div>
+    </div>
+    <audio id ="backgroundMusic" loop>
+        <source src="kekal.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function toggleContent(card) {
+            
+            card.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(){
+            var audio = document.getElementById('backgroundMusic');
+            audio.play();
+        });
+
+    </script>
+
+</body>
+</html>
